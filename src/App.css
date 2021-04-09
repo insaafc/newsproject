@@ -2,37 +2,131 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: -0.5fr 1fr 1fr;
+  gap: 5px 5px;
+  grid-template-areas:
+    "search-bar search-bar search-bar search-bar"
+    "content content content sidebar"
+    "content2 content3 . sidebar"
+    "content4 content5 .sidebar";
+}
+.search-bar {
+  grid-area: search-bar;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-bar-input {
+  width: 50%;
+  border-radius: 5px;
+  border-color: #000;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-btn {
+  border: none;
+  padding: 12px 20px;
+  margin: 10px;
+  background-color: #000;
+  color: #fff;
+}
+
+#s-circle {
+  position: relative;
+  top: -8px;
+  left: 0;
+  width: 43px;
+  height: 43px;
+  margin-top: 0;
+  border-width: 15px;
+  border: 15px solid #333;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 0.5s ease all;
+}
+
+.content {
+  grid-area: content;
+  text-align: start;
+  margin: 10px;
+}
+
+.content h3 {
+  text-align: start;
+}
+
+.read-btn {
+  border: none;
+  padding: 12px 20px;
+  margin: 0px;
+  background-color: #000;
+  color: #fff;
+}
+
+.read-btn-outline {
+  border: 2px solid #000;
+  padding: 12px 20px;
+  margin: 10px;
+  background-color: white;
+  color: #000;
+}
+
+.content img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.sidebar ul > li {
+  text-decoration: none;
+  list-style-type: none;
+  text-align: start;
+  margin: 10px;
+}
+
+.content2 {
+  grid-area: content2;
+}
+
+.content2 img {
+  width: 95%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.content3 {
+  grid-area: content3;
+}
+
+.content3 img {
+  width: 95%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.content4 {
+  grid-area: content4;
+}
+.content4 img {
+  width: 95%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.content5 {
+  grid-area: content5;
+}
+.content5 img {
+  width: 95%;
+  height: auto;
+  margin-bottom: 20px;
+}
+sub {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  justify-content: space-evenly;
+  color: darkgray;
 }
